@@ -24,7 +24,7 @@ public class HomeController {
 //    }
     @GetMapping(value = {"/", "/home"})
 //    @RequestMapping(value = {"/", "/home"})
-    public String homePage(){
+    public String homePage(Model model){
         System.out.println("*********");
         list = new String[3][3];
         for (int i = 0; i < 3; i++){
@@ -32,6 +32,7 @@ public class HomeController {
                 list[i][j] = " ";
             }
         }
+        model.addAttribute("list", list);
         return "index";
     }
 
@@ -96,6 +97,7 @@ public class HomeController {
             System.out.println();
         }
         System.out.println("-------------------");
+//        System.out.println(list.length);
         return "index";
     }
 
