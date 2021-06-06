@@ -2,7 +2,9 @@ package com.example.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -19,6 +21,17 @@ public class HomeController {
 //    @RequestMapping(value = {"/", "/home"})
     public static String homePage(){
         System.out.println("*********");
+        return "index";
+    }
+
+    @PostMapping(value = {"/", "/home"})
+    public static String game(@RequestParam("button") String buttonValue){
+        System.out.println("**** post *****");
+        if (buttonValue.equals("newGameButton")){
+            System.out.println("new game pressed");
+        }else {
+            System.out.println("game button pressed");
+        }
         return "index";
     }
 
