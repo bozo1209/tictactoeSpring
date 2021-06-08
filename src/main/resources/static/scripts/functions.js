@@ -1,7 +1,8 @@
-function testFun(clickedId, buttonName){
+function testFun(clickedId){
 //    var yourUrl = "http://localhost:8080/home";
     console.log("czesc młocie");
-    alert(clickedId);
+    console.log(clickedId);
+//    alert("clickedId");
 //    document.write("something");
 //    document.getElementById(clickedId).disabled = true;
 //    alert(clickedId);

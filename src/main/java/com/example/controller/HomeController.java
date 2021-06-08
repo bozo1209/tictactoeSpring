@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class HomeController {
 
     private String[][] list;
+    private boolean player1;
 
 //    @GetMapping(value = {"/", "/home"})
 //    public static ModelAndView homePage(){
@@ -25,13 +26,14 @@ public class HomeController {
     @GetMapping(value = {"/", "/home"})
 //    @RequestMapping(value = {"/", "/home"})
     public String homePage(Model model){
-        System.out.println("*********");
+        System.out.println("***** get ****");
         list = new String[3][3];
         for (int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 list[i][j] = " ";
             }
         }
+        player1 = true;
         model.addAttribute("list", list);
         return "index";
     }
@@ -46,45 +48,109 @@ public class HomeController {
                     list[i][j] = " ";
                 }
             }
+            player1 = true;
         }else {
             System.out.println("game button pressed: ");
             System.out.println(buttonValue);
 //            model.addAttribute(buttonValue, )
             if (buttonValue.equals("button00")){
                 if (list[0][0].equals(" ")){
-                    list[0][0] = "x";
+                    if (player1){
+                        list[0][0] = "x";
+                        player1 = false;
+                    }else {
+                        list[0][0] = "o";
+                        player1 = true;
+                    }
+//                    list[0][0] = "x";
                 }
             }else if (buttonValue.equals("button01")){
                 if (list[0][1].equals(" ")){
-                    list[0][1] = "x";
+                    if (player1){
+                        list[0][1] = "x";
+                        player1 = false;
+                    }else {
+                        list[0][1] = "o";
+                        player1 = true;
+                    }
+//                    list[0][1] = "x";
                 }
             }else if (buttonValue.equals("button02")){
                 if (list[0][2].equals(" ")){
-                    list[0][2] = "x";
+                    if (player1){
+                        list[0][2] = "x";
+                        player1 = false;
+                    }else {
+                        list[0][2] = "o";
+                        player1 = true;
+                    }
+//                    list[0][2] = "x";
                 }
             }else if (buttonValue.equals("button10")){
                 if (list[1][0].equals(" ")){
-                    list[1][0] = "o";
+                    if (player1){
+                        list[1][0] = "x";
+                        player1 = false;
+                    }else {
+                        list[1][0] = "o";
+                        player1 = true;
+                    }
+//                    list[1][0] = "o";
                 }
             }else if (buttonValue.equals("button11")){
                 if (list[1][1].equals(" ")){
-                    list[1][1] = "o";
+                    if (player1){
+                        list[1][1] = "x";
+                        player1 = false;
+                    }else {
+                        list[1][1] = "o";
+                        player1 = true;
+                    }
+//                    list[1][1] = "o";
                 }
             }else if (buttonValue.equals("button12")){
                 if (list[1][2].equals(" ")){
-                    list[1][2] = "o";
+                    if (player1){
+                        list[1][2] = "x";
+                        player1 = false;
+                    }else {
+                        list[1][2] = "o";
+                        player1 = true;
+                    }
+//                    list[1][2] = "o";
                 }
             }else if (buttonValue.equals("button20")){
                 if (list[2][0].equals(" ")){
-                    list[2][0] = "x";
+                    if (player1){
+                        list[2][0] = "x";
+                        player1 = false;
+                    }else {
+                        list[2][0] = "o";
+                        player1 = true;
+                    }
+//                    list[2][0] = "x";
                 }
             }else if (buttonValue.equals("button21")){
                 if (list[2][1].equals(" ")){
-                    list[2][1] = "x";
+                    if (player1){
+                        list[2][1] = "x";
+                        player1 = false;
+                    }else {
+                        list[2][1] = "o";
+                        player1 = true;
+                    }
+//                    list[2][1] = "x";
                 }
             }else if (buttonValue.equals("button22")){
                 if (list[2][2].equals(" ")){
-                    list[2][2] = "x";
+                    if (player1){
+                        list[2][2] = "x";
+                        player1 = false;
+                    }else {
+                        list[2][2] = "o";
+                        player1 = true;
+                    }
+//                    list[2][2] = "x";
                 }
             }
         }
