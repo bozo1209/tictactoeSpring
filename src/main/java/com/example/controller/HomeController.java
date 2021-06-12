@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.example.game.gameBoard.GameBoard;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,12 @@ public class HomeController {
 
     private String[][] list;
     private boolean player1;
+    private GameBoard gameBoard;
+
+    @Autowired
+    public HomeController(GameBoard gameBoard){
+        this.gameBoard = gameBoard;
+    }
 
 //    @GetMapping(value = {"/", "/home"})
 //    public static ModelAndView homePage(){
@@ -34,7 +42,11 @@ public class HomeController {
             }
         }
         player1 = true;
-        model.addAttribute("list", list);
+//        String[][] gameBoardList = gameBoard.getGameBoard();
+//        model.addAttribute("list", list);
+//        model.addAttribute("list", gameBoardList);
+        model.addAttribute("list", gameBoard.getGameBoard());
+//        gameBoard.getGameBoard();
         return "index";
     }
 
@@ -49,6 +61,8 @@ public class HomeController {
                 }
             }
             player1 = true;
+            gameBoard.setGameBoardToNull();
+            gameBoard.getGameBoard();
         }else {
             System.out.println("game button pressed: ");
             System.out.println(buttonValue);
@@ -56,9 +70,11 @@ public class HomeController {
             if (buttonValue.equals("button00")){
                 if (list[0][0].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(0,0,"x");
                         list[0][0] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(0,0,"o");
                         list[0][0] = "o";
                         player1 = true;
                     }
@@ -67,9 +83,11 @@ public class HomeController {
             }else if (buttonValue.equals("button01")){
                 if (list[0][1].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(0,1,"x");
                         list[0][1] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(0,1,"o");
                         list[0][1] = "o";
                         player1 = true;
                     }
@@ -78,9 +96,11 @@ public class HomeController {
             }else if (buttonValue.equals("button02")){
                 if (list[0][2].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(0,2,"x");
                         list[0][2] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(0,2,"o");
                         list[0][2] = "o";
                         player1 = true;
                     }
@@ -89,9 +109,11 @@ public class HomeController {
             }else if (buttonValue.equals("button10")){
                 if (list[1][0].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(1,0,"x");
                         list[1][0] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(1,0,"o");
                         list[1][0] = "o";
                         player1 = true;
                     }
@@ -100,9 +122,11 @@ public class HomeController {
             }else if (buttonValue.equals("button11")){
                 if (list[1][1].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(1,1,"x");
                         list[1][1] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(1,1,"o");
                         list[1][1] = "o";
                         player1 = true;
                     }
@@ -111,9 +135,11 @@ public class HomeController {
             }else if (buttonValue.equals("button12")){
                 if (list[1][2].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(1,2,"x");
                         list[1][2] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(1,2,"o");
                         list[1][2] = "o";
                         player1 = true;
                     }
@@ -122,9 +148,11 @@ public class HomeController {
             }else if (buttonValue.equals("button20")){
                 if (list[2][0].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(2,0,"x");
                         list[2][0] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(2,0,"o");
                         list[2][0] = "o";
                         player1 = true;
                     }
@@ -133,9 +161,11 @@ public class HomeController {
             }else if (buttonValue.equals("button21")){
                 if (list[2][1].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(2,1,"x");
                         list[2][1] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(2,1,"o");
                         list[2][1] = "o";
                         player1 = true;
                     }
@@ -144,9 +174,11 @@ public class HomeController {
             }else if (buttonValue.equals("button22")){
                 if (list[2][2].equals(" ")){
                     if (player1){
+                        gameBoard.addMoveToBoard(2,2,"x");
                         list[2][2] = "x";
                         player1 = false;
                     }else {
+                        gameBoard.addMoveToBoard(2,2,"o");
                         list[2][2] = "o";
                         player1 = true;
                     }
@@ -154,16 +186,18 @@ public class HomeController {
                 }
             }
         }
-        model.addAttribute("list", list);
-        System.out.println("-------------------");
-        for (int i = 0; i < 3; i++){
-            for (int j = 0; j < 3; j++){
-                System.out.print("|" + list[i][j] + "|");
-            }
-            System.out.println();
-        }
-        System.out.println("-------------------");
+//        model.addAttribute("list", list);
+        model.addAttribute("list", gameBoard.getGameBoard());
+//        System.out.println("-------------------");
+//        for (int i = 0; i < 3; i++){
+//            for (int j = 0; j < 3; j++){
+//                System.out.print("|" + list[i][j] + "|");
+//            }
+//            System.out.println();
+//        }
+//        System.out.println("-------------------");
 //        System.out.println(list.length);
+        gameBoard.printGameBoard();
         return "index";
     }
 
