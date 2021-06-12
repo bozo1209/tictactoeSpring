@@ -20,6 +20,7 @@ public class GameService {
         player1 = true;
         gameBoard.setGameBoardToNull();
         model.addAttribute("list", gameBoard.getGameBoard());
+//        gameResults(model);
     }
 
     public void game(String buttonValue){
@@ -147,6 +148,11 @@ public class GameService {
     public void gameMoveSend(Model model){
         model.addAttribute("list", gameBoard.getGameBoard());
         gameBoard.printGameBoard();
+        gameResults(model);
+    }
+
+    private void gameResults(Model model){
         System.out.println("results: " + gameBoard.resultsOfGame());
+        model.addAttribute("results", gameBoard.resultsOfGame());
     }
 }
