@@ -186,7 +186,7 @@ public class HomeController {
 ////                    list[2][2] = "x";
 //                }
 //            }
-            gameService.game(buttonValue);
+            gameService.game(buttonValue, model);
         }
 //        model.addAttribute("list", list);
 //        model.addAttribute("list", gameBoard.getGameBoard());
@@ -202,7 +202,7 @@ public class HomeController {
 //        gameBoard.printGameBoard();
 //        gameBoard.resultsOfGame();
 //        System.out.println("results: " + gameBoard.resultsOfGame());
-        gameService.gameMoveSend(model);
+//        gameService.gameMoveSend(model);
         return "index";
     }
 

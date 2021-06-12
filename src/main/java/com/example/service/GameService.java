@@ -19,11 +19,17 @@ public class GameService {
     public void homePage(Model model){
         player1 = true;
         gameBoard.setGameBoardToNull();
-        model.addAttribute("list", gameBoard.getGameBoard());
+//        model.addAttribute("list", gameBoard.getGameBoard());
 //        gameResults(model);
+        gameMoveSend(model);
     }
 
-    public void game(String buttonValue){
+    public void game(String buttonValue, Model model){
+        gamePlaying(buttonValue);
+        gameMoveSend(model);
+    }
+
+    private void gamePlaying(String buttonValue){
         String[][] gameBoardMoveList = gameBoard.getGameBoard();
         if (buttonValue.equals("button00")){
             if (gameBoardMoveList[0][0].equals(" ")){
@@ -145,7 +151,7 @@ public class GameService {
         }
     }
 
-    public void gameMoveSend(Model model){
+    private void gameMoveSend(Model model){
         model.addAttribute("list", gameBoard.getGameBoard());
         gameBoard.printGameBoard();
         gameResults(model);
