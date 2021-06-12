@@ -7,7 +7,7 @@ public class GameBoard {
 
     private String[][] gameBoard;
 
-    public void createGameBoars(){
+    public void createGameBoard(){
         gameBoard = new String[3][3];
         for (int i = 0; i < gameBoard.length; i++){
             for (int j = 0; j < gameBoard[i].length; j++){
@@ -19,7 +19,7 @@ public class GameBoard {
 
     public String[][] getGameBoard() {
         if (gameBoard == null){
-            createGameBoars();
+            createGameBoard();
         }
         return gameBoard;
     }

@@ -198,6 +198,8 @@ public class HomeController {
 //        System.out.println("-------------------");
 //        System.out.println(list.length);
         gameBoard.printGameBoard();
+//        gameBoard.resultsOfGame();
+        System.out.println("results: " + gameBoard.resultsOfGame());
         return "index";
     }
 
