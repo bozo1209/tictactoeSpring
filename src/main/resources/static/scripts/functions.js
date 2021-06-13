@@ -14,3 +14,23 @@ function testFun(clickedId){
 //    }));
 //    alert(document.getElementById(clickedId).name);
 }
+
+window.onload = function(){
+//    alert("hello");
+}
+
+function tes(){
+    alert("hello2");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+//  alert("hello3");
+//  document.write("something");
+//    var img = document.createElement("img");
+//    img.src = "/images/empty.png";
+//    var src = document.getElementById("button00")
+//    src.appendChild(img);
+//    alert("${list[0][0]}")
+//    var but00 = document.getElementById("button00").value;
+//    alert(but00);
+});

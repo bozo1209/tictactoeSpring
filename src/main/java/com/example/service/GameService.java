@@ -42,6 +42,7 @@ public class GameService {
                 if (gameBoardMoveList[0][0].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(0, 0, "x");
+                        aiMove();
 //                    list[0][0] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -56,6 +57,7 @@ public class GameService {
                 if (gameBoardMoveList[0][1].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(0, 1, "x");
+                        aiMove();
 //                    list[0][1] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -70,6 +72,7 @@ public class GameService {
                 if (gameBoardMoveList[0][2].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(0, 2, "x");
+                        aiMove();
 //                    list[0][2] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -84,6 +87,7 @@ public class GameService {
                 if (gameBoardMoveList[1][0].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(1, 0, "x");
+                        aiMove();
 //                    list[1][0] = "x";
 //                    player1 = false;
 ////                    TicTacToeAI.bestMove(gameBoard);
@@ -98,6 +102,7 @@ public class GameService {
                 if (gameBoardMoveList[1][1].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(1, 1, "x");
+                        aiMove();
 //                    list[1][1] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -112,6 +117,7 @@ public class GameService {
                 if (gameBoardMoveList[1][2].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(1, 2, "x");
+                        aiMove();
 //                    list[1][2] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -126,6 +132,7 @@ public class GameService {
                 if (gameBoardMoveList[2][0].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(2, 0, "x");
+                        aiMove();
 //                    list[2][0] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -140,6 +147,7 @@ public class GameService {
                 if (gameBoardMoveList[2][1].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(2, 1, "x");
+                        aiMove();
 //                    list[2][1] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -154,6 +162,7 @@ public class GameService {
                 if (gameBoardMoveList[2][2].equals(" ")) {
                     if (player1) {
                         gameBoard.addMoveToBoard(2, 2, "x");
+                        aiMove();
 //                    list[2][2] = "x";
 //                    player1 = false;
 //                    TicTacToeAI.bestMove(gameBoard);
@@ -169,12 +178,20 @@ public class GameService {
 //        }
 
 //        if (!player1){
+//        if (gameBoard.resultsOfGame().equals(GameStatus.ONGOING)) {
+//            CustomPair customPair = TicTacToeAI.bestMove(gameBoard);
+//            gameBoard.addMoveToBoard(customPair.getRow(), customPair.getColumn(), "o");
+//            player1 = true;
+//        }
+//        }
+    }
+
+    private void aiMove(){
         if (gameBoard.resultsOfGame().equals(GameStatus.ONGOING)) {
             CustomPair customPair = TicTacToeAI.bestMove(gameBoard);
             gameBoard.addMoveToBoard(customPair.getRow(), customPair.getColumn(), "o");
             player1 = true;
         }
-//        }
     }
 
     private void gameMoveSend(Model model){
