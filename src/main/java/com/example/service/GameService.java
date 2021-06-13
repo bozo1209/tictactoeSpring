@@ -1,5 +1,7 @@
 package com.example.service;
 
+import com.example.game.ai.CustomPair;
+import com.example.game.ai.TicTacToeAI;
 import com.example.game.gameBoard.GameBoard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +38,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(0,0,"x");
 //                    list[0][0] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(0,0,"o");
 //                    list[0][0] = "o";
@@ -49,7 +52,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(0,1,"x");
 //                    list[0][1] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(0,1,"o");
 //                    list[0][1] = "o";
@@ -62,7 +66,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(0,2,"x");
 //                    list[0][2] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(0,2,"o");
 //                    list[0][2] = "o";
@@ -75,7 +80,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(1,0,"x");
 //                    list[1][0] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(1,0,"o");
 //                    list[1][0] = "o";
@@ -88,7 +94,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(1,1,"x");
 //                    list[1][1] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(1,1,"o");
 //                    list[1][1] = "o";
@@ -101,7 +108,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(1,2,"x");
 //                    list[1][2] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(1,2,"o");
 //                    list[1][2] = "o";
@@ -114,7 +122,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(2,0,"x");
 //                    list[2][0] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(2,0,"o");
 //                    list[2][0] = "o";
@@ -127,7 +136,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(2,1,"x");
 //                    list[2][1] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(2,1,"o");
 //                    list[2][1] = "o";
@@ -140,7 +150,8 @@ public class GameService {
                 if (player1){
                     gameBoard.addMoveToBoard(2,2,"x");
 //                    list[2][2] = "x";
-                    player1 = false;
+//                    player1 = false;
+//                    TicTacToeAI.bestMove(gameBoard);
                 }else {
                     gameBoard.addMoveToBoard(2,2,"o");
 //                    list[2][2] = "o";
@@ -149,6 +160,8 @@ public class GameService {
 //                    list[2][2] = "x";
             }
         }
+        CustomPair customPair = TicTacToeAI.bestMove(gameBoard);
+        gameBoard.addMoveToBoard(customPair.getRow(), customPair.getColumn(), "o");
     }
 
     private void gameMoveSend(Model model){
