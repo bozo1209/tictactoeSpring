@@ -8,11 +8,14 @@
         .button{
             color: red;
             width: 125px;
-            height: 50px;
+            height: 125px;
+<!--            font-size: 25px;-->
+            padding: 10px;
+            text-align: center;
         }
-        .button{
-<!--            width: 125px;-->
-<!--            height: 125px;-->
+        .nButton{
+            width: 125px;
+            height: 50px;
         }
     </style>
 </head>
@@ -23,13 +26,14 @@
 <!--        window.history.replaceState( null, null, window.location.href );-->
 <!--    }-->
 <!--</script>-->
-<br><br>
+<br>
 <form action="" method="post">
-    <button type="submit" id="newGameButton" value="newGameButton" name="button" class="button">New Game</button>
+    <button type="submit" id="newGameButton" value="newGameButton" name="button" class="nButton">New Game</button>
 </form>
-<br><br>
+<br>
+<h1>game status:</h1>
 <h1 th:text="${results}">Default</h1>
-<br><br><br><br>
+<br><br>
 <!--<form action="" method="post">-->
 <!--    <button type="submit" id="button00" value="button00" name="button" class="button" onclick="testFun(this.id, this.name)"><img src="/images/empty.png"/></button>-->
 <!--    <button type="submit" id="button01" value="button01" name="button" class="button" onclick="testFun(this.id)"><img src="/images/empty.png"/></button>-->
@@ -59,7 +63,7 @@
 <!--    <button type="submit" id="button22" value="button22" name="button" class="button" onclick="testFun(this.id)"><li th:each="String: ${list}"><span th:text="${String[2]}">Default</span></li></button>-->
 <!--    <br>-->
 <!--</form>-->
-<br><br><br><br>
+<br><br>
 <!--<p><span th:text="${list.length}"></span></p>-->
 <form action="" method="post">
     <button type="submit" id="button00" value="button00" name="button" class="button" onclick="testFun(this.id)"><h1 th:text="${list[0][0]}">Default</h1></button>
