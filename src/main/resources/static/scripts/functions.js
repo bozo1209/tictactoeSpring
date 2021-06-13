@@ -31,6 +31,22 @@ document.addEventListener("DOMContentLoaded", function() {
 //    var src = document.getElementById("button00")
 //    src.appendChild(img);
 //    alert("${list[0][0]}")
-//    var but00 = document.getElementById("button00").value;
-//    alert(but00);
+
+
+    var but00 = document.getElementById("button00").textContent;
+    var but01 = document.getElementById("button01").textContent;
+    var but02 = document.getElementById("button02").textContent;
+    var but10 = document.getElementById("button10").textContent;
+    var but11 = document.getElementById("button11").textContent;
+    var but12 = document.getElementById("button12").textContent;
+    var but20 = document.getElementById("button20").textContent;
+    var but21 = document.getElementById("button21").textContent;
+    var but22 = document.getElementById("button22").textContent;
+
+    alert("but00: " + but00 + " but01: " + but01 + " but02: " + but02 + "\n" + "but10: " + but10 + " but11: " + but11 + " but12: " + but12 + "\n" + "but20: " + but20 + " but21: " + but21 + " but22: " + but22);
+    if(but00 == " "){
+        alert("hhhhhhh")
+    }
+
+
 });
