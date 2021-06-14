@@ -11,8 +11,7 @@ import org.springframework.ui.Model;
 @Service
 public class GameService {
 
-    private GameBoard gameBoard;
-    private boolean player1;
+    private final GameBoard gameBoard;
 
     @Autowired
     public GameService(GameBoard gameBoard){
@@ -20,10 +19,7 @@ public class GameService {
     }
 
     public void homePage(Model model){
-        player1 = true;
         gameBoard.setGameBoardToNull();
-//        model.addAttribute("list", gameBoard.getGameBoard());
-//        gameResults(model);
         gameMoveSend(model);
     }
 
@@ -31,166 +27,73 @@ public class GameService {
         if (gameBoard.resultsOfGame().equals(GameStatus.ONGOING)){
             gamePlaying(buttonValue);
         }
-//        gamePlaying(buttonValue);
         gameMoveSend(model);
     }
 
     private void gamePlaying(String buttonValue){
         String[][] gameBoardMoveList = gameBoard.getGameBoard();
-//        if (player1) {
-            if (buttonValue.equals("button00")) {
+        switch (buttonValue) {
+            case "button00":
                 if (gameBoardMoveList[0][0].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(0, 0, "x");
-                        aiMove();
-//                    list[0][0] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(0, 0, "o");
-////                    list[0][0] = "o";
-//                        player1 = true;
-                    }
-//                    list[0][0] = "x";
+                    gameBoard.addMoveToBoard(0, 0, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button01")) {
+                break;
+            case "button01":
                 if (gameBoardMoveList[0][1].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(0, 1, "x");
-                        aiMove();
-//                    list[0][1] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(0, 1, "o");
-////                    list[0][1] = "o";
-//                        player1 = true;
-                    }
-//                    list[0][1] = "x";
+                    gameBoard.addMoveToBoard(0, 1, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button02")) {
+                break;
+            case "button02":
                 if (gameBoardMoveList[0][2].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(0, 2, "x");
-                        aiMove();
-//                    list[0][2] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(0, 2, "o");
-////                    list[0][2] = "o";
-//                        player1 = true;
-                    }
-//                    list[0][2] = "x";
+                    gameBoard.addMoveToBoard(0, 2, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button10")) {
+                break;
+            case "button10":
                 if (gameBoardMoveList[1][0].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(1, 0, "x");
-                        aiMove();
-//                    list[1][0] = "x";
-//                    player1 = false;
-////                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(1, 0, "o");
-////                    list[1][0] = "o";
-//                        player1 = true;
-                    }
-//                    list[1][0] = "o";
+                    gameBoard.addMoveToBoard(1, 0, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button11")) {
+                break;
+            case "button11":
                 if (gameBoardMoveList[1][1].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(1, 1, "x");
-                        aiMove();
-//                    list[1][1] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(1, 1, "o");
-////                    list[1][1] = "o";
-//                        player1 = true;
-                    }
-//                    list[1][1] = "o";
+                    gameBoard.addMoveToBoard(1, 1, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button12")) {
+                break;
+            case "button12":
                 if (gameBoardMoveList[1][2].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(1, 2, "x");
-                        aiMove();
-//                    list[1][2] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(1, 2, "o");
-////                    list[1][2] = "o";
-//                        player1 = true;
-                    }
-//                    list[1][2] = "o";
+                    gameBoard.addMoveToBoard(1, 2, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button20")) {
+                break;
+            case "button20":
                 if (gameBoardMoveList[2][0].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(2, 0, "x");
-                        aiMove();
-//                    list[2][0] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(2, 0, "o");
-////                    list[2][0] = "o";
-//                        player1 = true;
-                    }
-//                    list[2][0] = "x";
+                    gameBoard.addMoveToBoard(2, 0, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button21")) {
+                break;
+            case "button21":
                 if (gameBoardMoveList[2][1].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(2, 1, "x");
-                        aiMove();
-//                    list[2][1] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(2, 1, "o");
-////                    list[2][1] = "o";
-//                        player1 = true;
-                    }
-//                    list[2][1] = "x";
+                    gameBoard.addMoveToBoard(2, 1, "x");
+                    aiMove();
                 }
-            } else if (buttonValue.equals("button22")) {
+                break;
+            case "button22":
                 if (gameBoardMoveList[2][2].equals(" ")) {
-                    if (player1) {
-                        gameBoard.addMoveToBoard(2, 2, "x");
-                        aiMove();
-//                    list[2][2] = "x";
-//                    player1 = false;
-//                    TicTacToeAI.bestMove(gameBoard);
-//                    } else {
-//                        gameBoard.addMoveToBoard(2, 2, "o");
-////                    list[2][2] = "o";
-//                        player1 = true;
-                    }
-//                    list[2][2] = "x";
+                    gameBoard.addMoveToBoard(2, 2, "x");
+                    aiMove();
                 }
-            }
-//            player1 = false;
-//        }
-
-//        if (!player1){
-//        if (gameBoard.resultsOfGame().equals(GameStatus.ONGOING)) {
-//            CustomPair customPair = TicTacToeAI.bestMove(gameBoard);
-//            gameBoard.addMoveToBoard(customPair.getRow(), customPair.getColumn(), "o");
-//            player1 = true;
-//        }
-//        }
+                break;
+        }
     }
 
     private void aiMove(){
         if (gameBoard.resultsOfGame().equals(GameStatus.ONGOING)) {
             CustomPair customPair = TicTacToeAI.bestMove(gameBoard);
             gameBoard.addMoveToBoard(customPair.getRow(), customPair.getColumn(), "o");
-            player1 = true;
         }
     }
 
@@ -201,7 +104,6 @@ public class GameService {
     }
 
     private void gameResults(Model model){
-        System.out.println("results: " + gameBoard.resultsOfGame());
         model.addAttribute("results", gameBoard.resultsOfGame());
     }
 }

@@ -2,6 +2,8 @@ package com.example.game.gameBoard;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+
 @Component
 public class GameBoard {
 
@@ -9,12 +11,9 @@ public class GameBoard {
 
     public void createGameBoard(){
         gameBoard = new String[3][3];
-        for (int i = 0; i < gameBoard.length; i++){
-            for (int j = 0; j < gameBoard[i].length; j++){
-                gameBoard[i][j] = " ";
-            }
+        for (String[] strings : gameBoard) {
+            Arrays.fill(strings, " ");
         }
-//        return gameBoard;
     }
 
     public String[][] getGameBoard() {
@@ -32,6 +31,7 @@ public class GameBoard {
         gameBoard[i][j] = mark;
     }
 
+    @SuppressWarnings("ForLoopReplaceableByForEach")
     public GameStatus resultsOfGame(){
         for (int i = 0; i < gameBoard.length; i++){
             for (int j = 0; j < gameBoard[i].length; j++){
