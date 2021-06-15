@@ -1,5 +1,8 @@
 package com.example.game.ai;
 
+/**
+ * custom pair, store next move for ai player
+ */
 public class CustomPair {
 
     private final int row;

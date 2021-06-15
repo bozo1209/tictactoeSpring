@@ -3,8 +3,16 @@ package com.example.game.ai;
 import com.example.game.gameBoard.GameBoard;
 import com.example.game.gameBoard.GameStatus;
 
+/**
+ * class that finds best next move for ai player
+ */
 public class TicTacToeAI {
 
+    /**
+     * method returns best move for ai player
+     * @param gameBoard contains current game board state
+     * @return CustomPair contains best move for ai player
+     */
     public static CustomPair bestMove(GameBoard gameBoard){
         CustomPair move = null;
         int bestScore = Integer.MAX_VALUE;

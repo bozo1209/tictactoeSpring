@@ -4,6 +4,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+/**
+ * class containing game board
+ */
 @Component
 public class GameBoard {
 
@@ -72,6 +75,9 @@ public class GameBoard {
         return false;
     }
 
+    /**
+     * method that print game board on server site
+     */
     public void printGameBoard(){
         System.out.println("-------------------");
         for (int i = 0; i < 3; i++){
