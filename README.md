@@ -1,6 +1,6 @@
 # tictactoeSpring
 
-> Simple tic tac toe game using Java, HTML and Spring Boot.
+> Simple tic tac toe game using Java, HTML and Spring Boot.\
 > Live demo: https://tictactoe-spring.herokuapp.com/home
 
 ## Table of Contents
@@ -24,6 +24,15 @@ AI was created using Minimax algorithm with alpha-beta pruning.
 Playing tic tac toe game versus AI opponent.
 
 ## Screenshots
+screen 1\
+./screens/1.jpg\
+screen 2\
+./screens/2.jpg\
+screen 3\
+./screens/3.jpg\
+screen 4\
+./screens/4.jpg\
+
 ## Sources
 - https://en.wikipedia.org/wiki/Minimax
 - https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning
