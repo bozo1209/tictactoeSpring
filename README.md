@@ -25,13 +25,13 @@ Playing tic tac toe game versus AI opponent.
 
 ## Screenshots
 screen 1\
-./screens/1.jpg\
+(./screens/1.jpg\)
 screen 2\
-./screens/2.jpg\
+(./screens/2.jpg\)
 screen 3\
-./screens/3.jpg\
+(./screens/3.jpg\)
 screen 4\
-./screens/4.jpg\
+(./screens/4.jpg\)
 
 ## Sources
 - https://en.wikipedia.org/wiki/Minimax
