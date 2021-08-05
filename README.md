@@ -25,7 +25,7 @@ Playing tic tac toe game versus AI opponent.
 
 ## Screenshots
 screen 1\
-![screen 1](./screens/1.jpg)
+![screen 1](./screens/1.jpg)\
 screen 2\
 ![screen 2](./screens/2.jpg)\
 screen 3\
