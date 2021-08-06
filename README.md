@@ -4,7 +4,7 @@
 > Live demo: https://tictactoe-spring.herokuapp.com/home
 
 ## Table of Contents
-* [General Information](#genera-information)
+* [General Information](#general-information)
 * [Technologies Used](#technologies-used)
 * [Feature](#feature)
 * [Screenshots](#screenshots)
